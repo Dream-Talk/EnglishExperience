@@ -1,0 +1,43 @@
+<!--pages/english/english.wxml-->
+<swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500"  indicator-color="#8799a3" indicator-active-color="#0081ff">
+  <swiper-item wx:for="{{swiper}}" wx:key class="{{cardCur==index?'cur':''}}">
+    <view class='bg-img shadow-blur' style="background-image:url({{item.url}})"></view>
+  </swiper-item>
+</swiper>
+<!--标题-->
+            <view class="weui-cell">
+                <view class="weui-cell__bd">英语四六级</view>
+                <view class="weui-cell__ft">两月通关四级</view>
+            </view>
+<!--时间轴-->
+<view class="cu-timeline">
+
+
+  <view class='cu-item text-blue'>
+    <view class="bg-blue content">
+        <view class=" flex flex-wrap justify-between align-center ">
+         <button class='cu-btn round lg bg-cyan' bindtap='foremethod'>四级攻略</button>
+         <button class='cu-btn round lg bg-cyan' bindtap='foreword'>四级单词</button>
+        </view>
+    </view>
+    <view class="bg-cyan content">
+        <view class=" flex flex-wrap justify-between align-center ">
+         <button class='cu-btn round lg bg-olive' bindtap='foredairy'>四级作文</button>
+         <button class='cu-btn round lg bg-olive' bindtap='foretransaction'>四级翻译</button>
+        </view>
+    </view>
+    <view class="bg-cyan content">
+             <view class=" flex flex-wrap justify-between align-center ">
+         <button class='cu-btn round lg bg-blue'bindtap='sixmethod'>六级攻略</button>
+         <button class='cu-btn round lg bg-blue'bindtap='sixword'>六级单词</button>
+        </view>
+    </view>
+    <view class="bg-cyan content">
+             <view class=" flex flex-wrap justify-between align-center ">
+         <button class='cu-btn round lg bg-green'bindtap='sixdairy'>六级作文</button>
+         <button class='cu-btn round lg bg-green'bindtap='sixtransaction'>六级翻译</button>
+        </view>
+    </view>
+  </view>
+</view>
+

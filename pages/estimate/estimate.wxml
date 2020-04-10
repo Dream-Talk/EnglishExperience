@@ -1,0 +1,186 @@
+<!--pages/estimate/estimate.wxml-->
+
+<view class="container myContainer topics-setting"  hidden="{{hidden_boder}}">
+    <view class="row">
+        <view class="topic-set-desc">
+            <!--<%= @topic_set.desc %>-->
+            英语四级宝典估分器    
+            <view class='action'>
+    <radio-group bindchange='SetBorderSize'>
+      <label class='margin-left-sm'>
+        <radio class='blue sm radio' value="fore" checked='true'></radio>
+        <text> 四级</text>
+      </label>
+      <label class='margin-left-sm'>
+        <radio class='blue sm radio' value='six'></radio>
+        <text> 六级</text>
+      </label>
+    </radio-group>
+  </view>
+        </view>
+    </view>
+    <form bindsubmit="submit">
+    <view class="row">
+        <view class="exam-module">
+            <view class="exam-module-head">
+                <view class="exam-module-head-name" >
+                    听力部分
+                </view>
+            </view>
+            <!-- 听力前1~15 -->
+            
+            <view class="exam-module-topics" id="topics-lisn-1" data-max="15">
+                <view class="topics-num">
+                    1-15
+                </view>
+                <view class="topics-total-num">
+                    (共15题)
+                </view>
+           
+                <view class="topics-right">
+                    <input type="tel" placeholder="输入正确题数 (≤15)" class="topics-input"
+                    name="listen1"/>
+                </view>
+            </view>
+
+            <!-- 听力前16~25 -->
+             <view class="exam-module-topics" id="topics-lisn-2" data-max="10">
+                <view class="topics-num">
+                    16-25
+                </view>
+                <view class="topics-total-num">
+                    (共10题)
+                </view>
+           
+                <view class="topics-right">
+                    <input type="tel" placeholder="输入正确题数 (≤10)" class="topics-input"
+                    name="listen2"/>
+                </view>
+            </view>
+        </view>
+
+        <view class="exam-module">
+            <view class="exam-module-head">
+                <view class="exam-module-head-name" >
+                    阅读理解
+                </view>
+            </view>
+            <view class="exam-module-topics" id="topics-rd-1" data-max="10">
+                <view class="topics-num">
+                    26-35
+                </view>
+                <view class="topics-total-num">
+                    (共10题)
+                </view>
+
+                <view class="topics-right"> 
+                    <input type="tel" placeholder="输入正确题数 (<10)" class="topics-input"
+                    name="read1"/>
+                </view>
+            </view>
+            
+            <view class="exam-module-topics" id="topics-rd-2" data-max="10">
+                <view class="topics-num">
+                    36-45
+                </view>
+                <view class="topics-total-num">
+                    (共10题)
+                </view>
+            
+                <view class="topics-right">
+                    <input type="tel" placeholder="输入正确题数 (<10)" class="topics-input"
+                    name="read2"/>
+                </view>
+            </view>
+
+            <view class="exam-module-topics" id="topics-rd-3" data-max="10">
+                <view class="topics-num">
+                    46-55
+                </view>
+                <view class="topics-total-num">
+                    (共10题)
+                </view>
+          
+                <view class="topics-right">
+                    <input type="tel" placeholder="输入正确题数 (<10)" class="topics-input"
+                    name="read3"/>
+                </view>
+            </view>
+        </view>
+
+        <view class="exam-module">
+            <view class="exam-module-head">
+                <view class="exam-module-head-name" >
+                    翻译和写作
+                </view>
+            </view>
+            <view class="exam-module-topics" id="topics-trans" data-max="15">
+                <view class="topics-num">
+                    翻译
+                </view>
+                <view class="topics-total-num">
+                    (自估分)
+                </view>
+
+                <view class="topics-right">
+                    <input type="tel" placeholder="自估分(0-15分区间)" class="topics-input"
+                    name="tran"/>
+                </view>
+            </view>
+            <view class="exam-module-topics" id="topics-wrt" data-max="15">
+                <view class="topics-num">
+                    作文
+                </view>
+                <view class="topics-total-num">
+                    (自估分)
+                </view>
+             
+                <view class="topics-right">
+                    <input type="tel" placeholder="自估分(0-15分区间)" class="topics-input"
+                    name="dairy"/>
+                </view>
+            </view>
+        </view>
+        <view hidden="{{hidden_wrong}}" ><text class="tdwrong">请输入正确的值</text></view>
+        <view class="tc">
+            <button class="my-button" id="calc-score"  form-type="submit">确认估分</button>
+        </view>
+    </view>
+    </form>
+</view>
+
+<view class="container report-container" id="report-container" hidden="{{hidden_result}}">
+    <view class="report-container-inner">
+        <view class="row">
+            <view class="topic-set-desc">
+                英语四级宝典估分器
+            </view>
+        </view>
+        <view class="row report-total">
+            <view class="report-total-title">
+                总分
+            </view>
+            <view class="report-total-score">
+               {{totalScore1}}
+            </view>
+        </view>
+
+        <view class="row report-desc">
+            {{preScore1}}
+        </view>
+
+        <view class="row score-detail">
+          <view class="result">
+             <text> 听力(35%)</text>
+             <text> 阅读(35%)</text>
+             <text> 翻译写作(30%)\n</text>
+             <text>各项得分:</text>
+             <text > {{scoreLisn1}}</text>
+             <text> {{scoreRD1}}</text>
+             <text> {{scoreTransWtr1}}</text>
+             <text> \n小分算法请参见英语四六级，攻略部分</text>
+            </view> 
+        </view>
+    </view>
+</view>
+

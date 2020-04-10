@@ -1,0 +1,144 @@
+<canvas bindtouchstart="navigateAbout" canvasId="gradeCanvas" class="canvas" style="height:200px;width: {{canvasWidth}};background: #3667ec"></canvas>
+<canvas bindtouchstart="touchHandler" canvasId="BMICanvas" class="BMIcanvas" style="height:200px;width: {{canvasWidth}};background: #3667ec"></canvas>
+<view class="container">
+    <official-account></official-account>
+    <view class="page-body">
+        <view class="page-section">
+            <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">性别</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <picker bindchange="bindSexChange" range="{{sex}}" value="{{sexIndex}}">
+                            <view class="weui-input">{{sex[sexIndex]}}</view>
+                        </picker>
+                    </view>
+                </view>
+            </view>
+            <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">年级</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <picker bindchange="bindGradeChange" range="{{grade}}" value="{{gradeIndex}}">
+                            <view class="weui-input">{{grade[gradeIndex]}}</view>
+                        </picker>
+                    </view>
+                </view>
+            </view>
+            <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">身高</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <input bindblur="heightOnBindBlur" class="weui-input" placeholder="单位：厘米" type="number"></input>
+                    </view>
+                </view>
+            </view>
+            <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">体重</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <input bindblur="weightOnBindBlur" class="weui-input" placeholder="单位：千克" type="digit"></input>
+                    </view>
+                </view>
+            </view>
+            <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">肺活量</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <input bindblur="capacityOnBindBlur" class="weui-input" placeholder="单位：毫升" type="number"></input>
+                    </view>
+                </view>
+            </view>
+            <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">坐体前屈</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <input bindblur="sit_and_reachOnBindBlur" class="weui-input" placeholder="单位：厘米" type="digit"></input>
+                    </view>
+                </view>
+            </view>
+            <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">立定跳远</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <input bindblur="jumpOnBindBlur" class="weui-input" placeholder="单位：米" type="digit"></input>
+                    </view>
+                </view>
+            </view>
+            <view class="weui-cells weui-cells_after-title" wx:if="{{sexIndex==0}}">
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">引体向上</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <input bindblur="otherOnBindBlur" class="weui-input" placeholder="单位：个" type="number"></input>
+                    </view>
+                </view>
+            </view>
+            <view class="weui-cells weui-cells_after-title" wx:if="{{sexIndex==1}}">
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">仰卧起坐</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <input bindblur="otherOnBindBlur" class="weui-input" placeholder="单位：个" type="number"></input>
+                    </view>
+                </view>
+            </view>
+            <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">50米跑</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <input bindblur="race_50OnBindBlur" class="weui-input" confirmType="next" placeholder="单位：秒" type="digit"></input>
+                    </view>
+                </view>
+            </view>
+            <view class="weui-cells weui-cells_after-title" wx:if="{{sexIndex==0}}">
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">1000米跑</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <picker bindchange="bindTimeChange" end="6:00" mode="time" start="0:00" value="{{time}}">
+                            <view class="weui-input">{{time}}</view>
+                        </picker>
+                    </view>
+                </view>
+            </view>
+            <view class="weui-cells weui-cells_after-title" wx:if="{{sexIndex==1}}">
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">800米跑</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <picker bindchange="bindTimeChange" end="6:00" mode="time" start="0:00" value="{{time}}">
+                            <view class="weui-input">{{time}}</view>
+                        </picker>
+                    </view>
+                </view>
+            </view>
+            <view class="ad">
+                <ad unitId="adunit-ca75623443119949"></ad>
+            </view>
+            <view class="about">
+                <image bindtap="shareApp" class="icon" src="../../images/share.png" style="margin-right:20px"></image>
+                <image bindtap="givieMoney" class="icon" src="../../images/redpacket.png"></image>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,29 @@
+<!--pages/air/air.wxml-->
+<view class="container" style="background-image:url('https://pic.yupoo.com/xiaolang1/6731eeee/9d36760b.jpeg');">  
+  <view class="top">
+    <view>{{currentWeather.currentCity}}</view>    <!--城市名-->
+    <view>{{currentWeather.date}}</view><!--时间-->
+  </view>
+
+  <view class="topRegion">
+    <view id="temperature" >{{currentWeather.temperature}}</view><!--气温-->
+    <view id="summary" >{{currentWeather.weatherDesc}}</view>      <!--晴朗-->
+  </view>
+
+  <view class="summary" >
+    	<view class='index'>感冒指数：{{flu.zs}}</view>
+	    <view class='description'>{{flu.des}}</view>               <!--提示-->
+  </view>
+
+  <view class="daily" >
+    <view class="daily_item" wx:for="{{forecast}}">    
+      <view class="daily_weekday" >{{item.date}}</view>     <!--星期-->
+      <view class="daily_temperature" >{{item.temperature}}</view> <!--温度-->     
+      <view class="daily_summary" >{{item.weather}}</view>     <!--提示-->
+    </view>
+  </view>
+</view>
+
+
+
+

@@ -1,0 +1,9 @@
+<view class="page-body">
+    <view class="page-section">
+        <video  class="video-css"   src="{{src}}"></video>
+        <view class="btn-area">
+        </view>
+    </view>
+    <text>点击右上角可以添加到我的小程序，加载慢请稍等几秒\r\n</text>
+    <text>温馨提示,不要相信视频出现的任何广告,仅供学习</text>
+</view>

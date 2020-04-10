@@ -1,0 +1,61 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/english/english",
+    "pages/word/word",
+    "pages/air/air",
+    "pages/detail/detail",
+    "pages/detail/reviewdetail",
+    "pages/BMI/BMI",
+    "pages/englishfore/method",
+    "pages/englishfore/word",
+    "pages/englishfore/dairy",
+    "pages/englishfore/transaction",
+    "pages/englishsix/method",
+    "pages/englishsix/word",
+    "pages/englishsix/dairy",
+    "pages/englishsix/transaction",
+    "pages/article/article",
+    "pages/dairy/dairy",
+    "pages/estimate/estimate",
+    "pages/gym/gym"
+  ],
+  "navigateToMiniProgramAppIdList": [
+    "wx460ecc8cab518299",
+    "wx6d421803b8749228"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "天气查询需要使用位置信息"
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "backgroundColor": "#eee",
+    "navigationBarBackgroundColor": "#00a5cf",
+    "navigationBarTitleText": "英语四级宝典",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "##BEBEBE",
+    "selectedColor": "#00a5cf",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/icon_home.png",
+        "selectedIconPath": "images/icon_home_y.png",
+        "text": "导航"
+      },
+      {
+        "pagePath": "pages/english/english",
+        "iconPath": "images/english.png",
+        "selectedIconPath": "images/english_y.png",
+        "text": "英语四六级"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

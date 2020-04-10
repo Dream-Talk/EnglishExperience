@@ -1,0 +1,47 @@
+<import src="../template/start.wxml" />
+
+<view class='wapper'>
+  <view class='mask'></view>
+  <image class='back-cover' mode='aspectFill' src='{{subject.images.large}}'></image>
+  <image class='cover' mode='widthFix' src='{{subject.images.small}}'></image>
+  <view class='info'>
+    <view>{{subject.title}}</view>
+    <view>{{subject.original_title}}</view>
+    <view class='rating'>
+      <text class='score' wx:if='{{subject.rating.average == 0}}'>无</text>
+      <text class='score' wx:else>{{subject.rating.average}}</text>
+      <view>
+        <template is="start" data="{{stars:subject.start}}" />
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='introduction'>
+  <view class='title'>{{subject.title}}的简介</view>
+  <view>
+    {{subject.summary}}
+  </view>
+  <view class='detail'>
+    <view>
+      <text style='padding-right: 20rpx;'>{{subject.durations}}</text>
+      <view wx:for="{{subject.genres}}" wx:key="index" style='display:inline-block'>
+        <text wx:if='{{index !== 0}}'>/</text> {{item}}
+      </view>
+
+    </view>
+    <view style='padding-right: 20rpx;'>
+      {{subject.mainland_pubdate}}(中国大陆)上映 {{subject.countries}}
+    </view>
+    <view>
+      <text wx:for="{{subject.directors}}" wx:key="index">
+        {{item.name}}（导演）
+     </text>
+      <view wx:for="{{subject.casts}}" wx:key="index" style='display:inline-block'>
+        <text wx:if='{{index !== 0}}'>/</text> {{item.name}}
+      </view>
+
+    </view>
+  </view>
+</view>
+

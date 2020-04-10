@@ -1,0 +1,24 @@
+/* pages/word/word.wxss */
+
+input{
+  border: 1px solid grey;
+  margin: 5%;
+  padding: 5px;
+  border-radius:3px;
+  height: 40px;
+  min-height: 40px;
+}
+button{
+  /* width: 80%; */
+  margin: 5%;
+}
+.textView{
+  margin: 5%;
+}.senView{
+ margin: 5%;
+}
+page {
+  display: block;
+  min-height: 100%;
+  background-color:rgba(247, 246, 214, 0.438);
+}

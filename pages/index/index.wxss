@@ -1,0 +1,70 @@
+/**index.wxss**/
+
+.slide-image{
+  width: 100%;
+  height: 300rpx;
+}
+.navigation-image{
+  width: 180rpx;
+  height: 150rpx;
+}
+.icontext{
+  font-family: Georgia;
+  font-size:15px;
+}.distitle{
+  font-family: Georgia;
+  font-size:20px; 
+}
+.flex-view-item{
+  text-align: center;
+}
+.nav-left,.nav-right{
+text-align: center;
+}
+.nav-left,.nav-right{
+text-align: center;
+}
+.nav-left>view,.nav-right>view{
+width: 45rpx;
+height: 45rpx;
+margin: 0 auto;
+margin-top: 15rpx;
+}
+.nav-left>view image, .nav-right>view image{
+width: 100%;
+height: 100%;
+vertical-align: top;
+}
+.nav-left text,.nav-right text{
+display: block;
+margin-top: -30rpx;
+font-size: 20rpx;
+}
+.nav-right button image{
+width: 100%;
+height: 100%;
+vertical-align: top;
+}
+.nav-right button text{
+display: block;
+margin-top: -4rpx;
+font-size: 20rpx;
+}
+.nav-right button::after {
+border: 0;
+}
+.zf{
+  position: fixed;
+  left: 93%;
+  top: 150px;
+  width: 120rpx;
+  height:70rpx;
+  margin-left: -45rpx;
+  font-size: 60rpx;
+  line-height: 90rpx;
+  text-align: center;
+  background-color: #fafdff00;
+ 
+  color: red;
+}
+ 

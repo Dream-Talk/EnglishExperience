@@ -1,0 +1,25 @@
+/**app.wxss**/
+
+@import '/libs/weui.wxss'; 
+@import "/libs/icon.wxss";
+@import "/libs/colorui.wxss";
+
+page{
+  height: 100%;
+  font-family: "Microsoft YaHei";
+}
+
+[placeholder] {
+  font-family: "Microsoft YaHei";
+
+}
+
+view{
+  overflow: visible;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+} 

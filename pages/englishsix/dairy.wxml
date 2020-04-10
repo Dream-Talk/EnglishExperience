@@ -1,0 +1,21 @@
+<!--pages/englishsix/dairy.wxml-->
+<view class="cu-bar bg-white solid-bottom margin-top">
+  <view class='action'>
+    <text class='icon-title text-orange '></text> 作文范文背诵
+  </view>
+</view>
+
+<block wx:for="{{kind}}" wx:key="*this">
+ <navigator url="../dairy/dairy?objectId={{item.objectId}}&tableName=DairySix" hover-class="navigator-hover">
+<view class="cu-list menu {{menuBorder?'sm-border':''}} {{menuCard?'card-menu margin-top':''}}" >
+
+  <view class="cu-item {{menuArrow?'arrow':''}}" >
+    <view class='content' >
+      <text class='text-grey'>{{item.kind}}</text>
+    </view>
+  </view>
+
+</view>
+</navigator>
+</block>
+

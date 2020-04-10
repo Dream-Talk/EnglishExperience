@@ -1,0 +1,19 @@
+<!--pages/dairy/dairy.wxml-->
+
+<view style='width:100%;text-align:center;' class="picture-2"  bindtap='hide'>
+ 　　<image style='width:94.5%;' class="infoImage" src="{{txt.title}}" mode='widthFix'></image>
+     <image style='width:94.5%;' class="infoImage" src="{{txt.img}}" mode='widthFix' hidden="{{hidden}}"></image>
+</view>
+<!--标题1-->
+   <view class="weui-cell">
+        <view class="weui-cell__hd">
+          <image src="{{icon1}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+          </view>
+        <view class="weui-cell__bd">默写</view>
+      <view class="weui-cell__ft">单机题目可隐藏</view>
+   </view>
+   <!--输入框-->
+   <view style='text-align:center;height:100%' >
+  <textarea maxlength='600'fixed='true' auto-focus='true' value='{{mytxt}}'bindinput='save'></textarea>
+   <button class='cu-btn round lg bg-blue'bindtap='clear'>清空</button>
+  </view>
